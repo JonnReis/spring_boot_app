@@ -4,7 +4,7 @@ use vehicle;
 
 create user 'teste'@'localhost' identified by 'teste123';
 
-grant select, insert, delete, update on anotacao.* to user@'localhost';
+grant select, insert, delete, update on anotacao.* to teste@'localhost';
 
 create table car_car (
   car_id bigint unsigned not null auto_increment,
