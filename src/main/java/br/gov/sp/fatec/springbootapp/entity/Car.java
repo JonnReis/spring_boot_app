@@ -13,16 +13,11 @@ public class Car {
     
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "car_id")
+    @Column(name = "car_id")
     private Long id;
 
-    @Column (name = "car_model")
+    @Column(name = "car_model")
     private String model;
-
-    @Column (name = "car_color")
-    private String color;
-
-    
 
     public Long getId() {
         return id;
@@ -38,14 +33,6 @@ public class Car {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
+    }    
     
 }

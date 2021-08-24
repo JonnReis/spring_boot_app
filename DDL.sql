@@ -9,7 +9,6 @@ grant select, insert, delete, update on vehicle.* to teste@'localhost';
 create table car_car (
   car_id bigint unsigned not null auto_increment,
   car_model varchar(50) not null,
-  car_color varchar(20) not null,
   primary key (car_id),
   unique key uni_car_model (car_model)
 );

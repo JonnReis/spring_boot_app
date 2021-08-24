@@ -2,15 +2,14 @@ package br.gov.sp.fatec.springbootapp;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import javax.transaction.Transactional;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
-import br.gov.sp.fatec.springbootapp.entity.Brand;
-import br.gov.sp.fatec.springbootapp.repository.BrandRepository;
+import br.gov.sp.fatec.springbootapp.entity.Car;
+import br.gov.sp.fatec.springbootapp.repository.CarRepository;
 
 @SpringBootTest
 @Transactional
@@ -18,18 +17,26 @@ import br.gov.sp.fatec.springbootapp.repository.BrandRepository;
 class SpringBootAppApplicationTests {
 
 	@Autowired
-	private BrandRepository braRepo;
+	private CarRepository carRepo;
 
 	@Test
 	void contextLoads() {
 	}
 
 	@Test
-	void brandRepositorySaveTestOk() {
-		Brand bra = new Brand();
-		bra.setName("teste");
-		braRepo.save(bra);
-		assertNotNull(bra.getId());
+	void carRepositorySaveTestOk() {
+		Car car = new Car();
+		car.setModel("test");
+		carRepo.save(car);
+		assertNotNull(car.getModel());
+	}
+
+	@Test
+	void carRepositoryFindByModelTestOk() {
+		Car car = new Car();
+		car.setModel("test2");
+		carRepo.save(car);
+		assertNotNull(carRepo.findByModel("test2"));
 	}
 
 }
