@@ -6,6 +6,6 @@ import br.gov.sp.fatec.springbootapp.entity.Car;
 
 public interface CarRepository extends JpaRepository<Car, Long>{
     
-    public Car findByModel (String name);
+    public Car findByModel (String model);
 
 }
